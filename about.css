@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    /* color: #333; */
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 220px;
+    padding: 1rem 5rem;
+    position: absolute;
+    top: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+}
+.nav-links a,img{
+    margin-right: 30px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero {
+    background: url('./images/image\ 27.png') center/cover no-repeat;
+    height: 700px;
+    width: auto;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    /* position: relative; */
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    /* top: 50px; */
+    padding: 1rem;
+   
+}
+#btn{
+    /* display: flex; */
+    /* padding: 0rem 5rem; */
+}
+
+.genres {
+    padding: 2rem;
+}
+
+.genres h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: flex;
+    margin-left: 110px;
+    /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
+    /* gap: 1rem; */
+}
+
+.genre-card {
+    position: relative;
+    gap: 20px;
+}
+.genre-card p{
+    position: absolute;
+    margin: 50px 30px;
+    background-color: #2e2c2c;
+    color: #ffff;
+    text-transform: capitalize;
+    
+}
+
+.books {
+    padding: 2rem;
+}
+
+.section-header {
+    display: flex;
+    margin-left: 450px;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.book-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.book {
+    padding: 1rem;
+    flex: 1 1 calc(20% - 1rem);
+    min-width: 120px;
+    text-align: center;
+}
+
+.app-promo {
+    display: flex;
+    flex-wrap: wrap;
+    background: #f38ca2;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: auto;
+}
+
+.app-buttons button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: white;
+    color: #f38ca2;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bookstores {
+    padding: 2rem;
+}
+
+.store-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.store {
+    flex: 1 1 calc(25% - 1rem);
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+
+#section-4 {
+    background-color: black;
+    width: 1207px;
+    height: 70vh;
+    margin-top: 80px;
+
+}
+
+#section-4one img:nth-child(2) {
+    width: 160px;
+    position: relative;
+    margin-left: 500px;
+    margin-top: 30px;
+
+}
+
+#section-5 {
+    display: flex;
+    /* padding: 20px; */
+    margin-left: 360px;
+}
+
+#section-5one {
+    margin-top: 100px;
+    margin-right: 50px;
+    
+}
+
+#section-5one a {
+    color: white;
+    margin-top: 5em;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+#last {
+    margin-top: 55px;
+    margin-left: 50px;
+
+}
+
+#section-6 {
+    display: flex;
+    margin-left: 350px;
+    margin-top: 10px;
+
+}
+
+#section-6one a {
+    color: white;
+    /* margin-top: 7px; */
+    text-transform: capitalize;
+    text-decoration: none;
+}
+#section-6one:nth-child(1){
+    display: flex;
+}
+#section-6one{
+    margin-right: 100px;
+}

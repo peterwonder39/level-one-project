@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore Signup - Bookdiverse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: 2rem 1rem;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 60px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .signup-form label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            margin-top: 0.3rem;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper .toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        small {
+            display: block;
+            font-size: 0.7rem;
+            color: #333;
+            margin-top: 0.2rem;
+        }
+
+        .signup-btn {
+            width: 100%;
+            background: #f06277;
+            color: #fff;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-size: 1rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .agreement,
+        .login-prompt {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .agreement a,
+        .login-prompt a {
+            color: #f06277;
+            text-decoration: none;
+        }
+
+        #section-4 {
+            background-color: black;
+            width: 1207px;
+            height: 70vh;
+            margin-top: 80px;
+
+        }
+
+        #section-4one img:nth-child(2) {
+            width: 160px;
+            position: relative;
+            margin-left: 500px;
+            margin-top: 30px;
+
+        }
+
+        #section-5 {
+            display: flex;
+            /* padding: 20px; */
+            margin-left: 360px;
+        }
+
+        #section-5one {
+            margin-top: 100px;
+            margin-right: 50px;
+
+        }
+
+        #section-5one a {
+            color: white;
+            margin-top: 5em;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #last {
+            margin-top: 55px;
+            margin-left: 50px;
+
+        }
+
+        #section-6 {
+            display: flex;
+            margin-left: 350px;
+            margin-top: 10px;
+
+        }
+
+        #section-6one a {
+            color: white;
+            /* margin-top: 7px; */
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #section-6one:nth-child(1) {
+            display: flex;
+        }
+
+        #section-6one {
+            margin-right: 100px;
+        }
+
+        @media (max-width: 600px) {
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .signup-btn {
+                font-size: 0.95rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="form-wrapper">
+            <img src="logo.png" alt="Bookdiverse Logo" class="logo" />
+            <h1>Join Our Community of Booksellers!</h1>
+
+            <form class="signup-form">
+                <label>
+                    Bookstore Name
+                    <input type="text" placeholder="Bookstore Name" required />
+                </label>
+
+                <label>
+                    Store owner Full Name
+                    <input type="text" placeholder="Store owner Full Name" required />
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" placeholder="Email" required />
+                </label>
+
+                <label>
+                    Password
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Password" required />
+                        <span class="toggle"></span>
+                    </div>
+                    <small>Password must be at least 8 characters with Uppercase, lowercase and numbers</small>
+                </label>
+
+                <label>
+                    Confirm Password
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Confirm Password" required />
+                        <span class="toggle"></span>
+                    </div>
+                </label>
+
+                <label>
+                    Location
+                    <input type="text" placeholder="Location" required />
+                </label>
+
+                <label>
+                    Store Address
+                    <input type="text" placeholder="Store Address" required />
+                </label>
+
+                <button type="submit" class="signup-btn">Sign up</button>
+                <p class="agreement">By Signing up, you agree with our <a href="#">terms</a></p>
+                <p class="login-prompt">Already have an account? <a href="loginpage.html">Log in</a></p>
+            </form>
+        </div>
+    </main>
+    <footer id="section-4">
+        <div id="section-4one">
+            <img src="./images/Rectangle 80.png" alt="" width="1207" style="position: absolute;">
+            <img src="./images/Frame 35181.png" alt="">
+        </div>
+        <div id="section-5">
+            <div id="section-5one">
+                <a href="#">library</a>
+                <br>
+                <a href="#">genres</a>
+                <br>
+                <a href="#">languages</a>
+                <br>
+                <a href="#">authors</a>
+            </div>
+            <div id="section-5one">
+                <a href="#">company</a>
+                <br>
+                <a href="#">about us</a>
+                <br>
+                <a href="#">help</a>
+                <br>
+                <a href="#">become a partner</a>
+            </div>
+            <div id="section-5one">
+                <div id="last">
+                    <a href="#">get the app</a>
+                </div>
+                <img src="./images/google-play 1.png" alt="" width="90" style="margin-top: 5px;">
+                <img src="./images/app-store 1.png" alt="" width="90" style="margin-top: 5px;">
+            </div>
+        </div>
+        <hr width="1207" style="color: white;">
+        <div id="section-6">
+            <div id="section-6one">
+                <a href="#">contact us:</a>
+                <img src="./images/logos_facebook.png" alt="" width="15">
+                <img src="./images/Group.png" alt="" width="15">
+                <img src="./images/Group (1).png" alt="" width="15">
+                <img src="./images/Vector.png" alt="" width="15">
+            </div>
+            <div id="section-6one">
+                <a href="#">terms and privacy</a>
+            </div>
+            <div id="section-6one">
+                <a href="#">Delivery & returns</a>
+            </div>
+        </div>
+
+    </footer>
+
+    
+</body>
+
+</html>

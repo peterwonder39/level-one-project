@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Bookdiverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #222;
+            background-color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 400px;
+            padding: 1rem 7rem;
+            position: absolute;
+            top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            list-style: none;
+        }
+        .nav-links a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a,
+        img {
+            margin-right: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            /* gap: 15px; */
+        }
+        .steps {
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 1rem;
+            margin-top: 7rem;
+        }
+
+        .steps .active {
+            font-weight: bold;
+        }
+
+        .steps .muted {
+            color: #ccc;
+        }
+
+        .cart-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 1rem 8rem;
+            margin-top: 3rem;
+        }
+
+        .cart-item {
+            display: flex;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cart-item img {
+            width: 120px;
+            height: auto;
+            margin-right: 1rem;
+        }
+
+        .details {
+            flex: 1 1 45%;
+        }
+
+        .details h3 {
+            margin: 0;
+        }
+
+        .details span {
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        .actions {
+            margin-top: 0.5rem;
+        }
+
+        .actions select {
+            padding: 4px;
+            margin-left: 0.3rem;
+        }
+
+        .actions .delete {
+            background: none;
+            border: none;
+            color: red;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        .actions .save {
+            margin-left: 1rem;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .price {
+            flex: 1 1 30%;
+            text-align: right;
+        }
+
+        .subtotal {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .cart-total {
+            text-align: right;
+            margin: 2rem 0;
+        }
+
+        .cart-total .buttons {
+            margin-top: 1rem;
+        }
+
+        .continue,
+        .checkout {
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .continue {
+            border: 2px solid #f06277;
+            background: white;
+            color: #f06277;
+            margin-right: 1rem;
+        }
+
+        .checkout {
+            background: #f06277;
+            color: white;
+            border: none;
+        }
+
+        .suggestions {
+            margin: 3rem 0;
+        }
+
+        .suggestions h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .suggested-items {
+            display: flex;
+            
+            justify-content: space-between;
+            
+        }
+
+        .suggested-items div {
+            width: 100px;
+            text-align: center;
+        }
+
+        .suggested-items img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        #section-4 {
+            background-color: black;
+            width: 1207px;
+            height: 70vh;
+            margin-top: 80px;
+
+        }
+
+        #section-4one img:nth-child(2) {
+            width: 160px;
+            position: relative;
+            margin-left: 500px;
+            margin-top: 30px;
+
+        }
+
+        #section-5 {
+            display: flex;
+            /* padding: 20px; */
+            margin-left: 360px;
+        }
+
+        #section-5one {
+            margin-top: 100px;
+            margin-right: 50px;
+
+        }
+
+        #section-5one a {
+            color: white;
+            margin-top: 5em;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #last {
+            margin-top: 55px;
+            margin-left: 50px;
+
+        }
+
+        #section-6 {
+            display: flex;
+            margin-left: 350px;
+            margin-top: 10px;
+
+        }
+
+        #section-6one a {
+            color: white;
+            /* margin-top: 7px; */
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #section-6one:nth-child(1) {
+            display: flex;
+        }
+
+        #section-6one {
+            margin-right: 100px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .price {
+                text-align: left;
+                margin-top: 1rem;
+            }
+
+            .cart-total {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .suggested-items {
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><img src="./images/Frame 35172.png" alt="" width="100">
+            <a href="#"><i class="fa fa-search" style="color: black;"></i></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Bookstores</a></li>
+                <li><a href="#">Help</a></li>
+                <img src="./images/love-svgrepo-com 1.png" alt="" width="20">
+                <img src="./images/material-symbols_shopping-cart-outline-rounded.png" alt="" width="20">
+                <img src="./images/mdi_account-outline.png" alt="" width="20">
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="steps">
+        <span class="active">Shopping Cart</span> <span>➤</span>
+        <span class="muted">Checkout Details</span> <span>➤</span>
+        <span class="muted">Order Complete</span>
+    </div>
+
+    
+    <main class="cart-container">
+        <div class="cart-item">
+            <img src="./images/rachel khong 1.png" alt="Real Americans" />
+            <div class="details">
+                <h3>Real Americans <span>(Hardcover)</span></h3>
+                <p>By Rachel Khong</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <div class="actions">
+                    <label>Qty:
+                        <select style="background-color: #dfd4d4; border-radius: 8px;">
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </label>
+                    <button class="delete">Delete</button>
+                    <a href="#" class="save">Save for later</a>
+                </div>
+            </div>
+            <div class="price">
+                <p>Price: <strong>NGN10,183</strong></p>
+                <p>Delivery fee: <strong>NGN4,000</strong></p>
+                <hr style="margin-left: 155px;">
+                <p class="subtotal">Subtotal: <strong>NGN14,183</strong></p>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="./images/atomic habits 1.png" alt="Atomic Habits" />
+            <div class="details">
+                <h3>Atomic Habits <span>(Paperback)</span></h3>
+                <p>By James Clear</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <div class="actions">
+                    <label>Qty:
+                        <select style="background-color: #dfd4d4; border-radius: 8px;">
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </label>
+                    <button class="delete">Delete</button>
+                    <a href="#" class="save">Save for later</a>
+                </div>
+            </div>
+            <div class="price">
+                <p>Price: <strong>NGN3,700</strong></p>
+                <p>Delivery fee: <strong>NGN4,000</strong></p>
+                <hr style="margin-left: 155px;">
+                <p class="subtotal">Subtotal: <strong>NGN7,700</strong></p>
+            </div>
+        </div>
+
+        <div class="cart-total">
+            <p>Total (2 Items): <strong>NGN21,883</strong></p>
+            <div class="buttons">
+                <button class="continue">Continue Shopping</button>
+                <button class="checkout">Proceed To Checkout</button>
+            </div>
+        </div>
+
+        
+        <section class="suggestions">
+            <h3>Customers who bought this item also bought</h3>
+            <div class="suggested-items">
+                <div>
+                    <img src="./images/rich dad 1.png" alt="" />
+                    <p>Rich Dad, Poor Dad</p>
+                </div>
+                <div>
+                    <img src="./images/power of habit 1 (2).png" alt="" />
+                    <p>The Power Of Habits</p>
+                </div>
+                <div>
+                    <img src="./images/larry king 1.png" alt="How to Talk" />
+                    <p>How To Talk To Anyone...</p>
+                </div>
+                <div>
+                    <img src="./images/5am club 1.png" alt="" />
+                    <p>The 5 AM Club</p>
+                </div>
+                <div>
+                    <img src="/images/How to end a love story 1.png" alt="" />
+                    <p>How To End A Love Story</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="section-4">
+        <div id="section-4one">
+            <img src="./images/Rectangle 80.png" alt="" width="1207" style="position: absolute;">
+            <img src="./images/Frame 35181.png" alt="">
+        </div>
+        <div id="section-5">
+            <div id="section-5one">
+                <a href="#">library</a>
+                <br>
+                <a href="#">genres</a>
+                <br>
+                <a href="#">languages</a>
+                <br>
+                <a href="#">authors</a>
+            </div>
+            <div id="section-5one">
+                <a href="#">company</a>
+                <br>
+                <a href="#">about us</a>
+                <br>
+                <a href="#">help</a>
+                <br>
+                <a href="#">become a partner</a>
+            </div>
+            <div id="section-5one">
+                <div id="last">
+                    <a href="#">get the app</a>
+                </div>
+                <img src="./images/google-play 1.png" alt="" width="90" style="margin-top: 5px;">
+                <img src="./images/app-store 1.png" alt="" width="90" style="margin-top: 5px;">
+            </div>
+        </div>
+        <hr width="1207" style="color: white;">
+        <div id="section-6">
+            <div id="section-6one">
+                <a href="#">contact us:</a>
+                <img src="./images/logos_facebook.png" alt="" width="15">
+                <img src="./images/Group.png" alt="" width="15">
+                <img src="./images/Group (1).png" alt="" width="15">
+                <img src="./images/Vector.png" alt="" width="15">
+            </div>
+            <div id="section-6one">
+                <a href="#">terms and privacy</a>
+            </div>
+            <div id="section-6one">
+                <a href="#">Delivery & returns</a>
+            </div>
+        </div>
+
+    </footer>
+    
+</body>
+    

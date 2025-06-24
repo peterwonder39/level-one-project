@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification - Bookdiverse</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            color: #222;
+        }
+
+        .verify-container {
+            max-width: 450px;
+            margin: 4rem auto 2rem;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .verify-container h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .verify-container p {
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
+        .pin-inputs {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pin-inputs input {
+            width: 40px;
+            height: 45px;
+            font-size: 1.5rem;
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid #999;
+            outline: none;
+        }
+
+        .resend {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .resend a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        button[type="submit"] {
+            background: #f06277;
+            border: none;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-text {
+            margin-top: 1.5rem;
+        }
+
+        .signup-text a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        /* Footer Styling */
+        #section-4 {
+            background-color: black;
+            width: 1207px;
+            height: 70vh;
+            margin-top: 80px;
+
+        }
+
+        #section-4one img:nth-child(2) {
+            width: 160px;
+            position: relative;
+            margin-left: 500px;
+            margin-top: 30px;
+
+        }
+
+        #section-5 {
+            display: flex;
+            /* padding: 20px; */
+            margin-left: 360px;
+        }
+
+        #section-5one {
+            margin-top: 100px;
+            margin-right: 50px;
+
+        }
+
+        #section-5one a {
+            color: white;
+            margin-top: 5em;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #last {
+            margin-top: 55px;
+            margin-left: 50px;
+
+        }
+
+        #section-6 {
+            display: flex;
+            margin-left: 350px;
+            margin-top: 10px;
+
+        }
+
+        #section-6one a {
+            color: white;
+            /* margin-top: 7px; */
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #section-6one:nth-child(1) {
+            display: flex;
+        }
+
+        #section-6one {
+            margin-right: 100px;
+        }
+
+        .auth-buttons {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-buttons .login,
+        .auth-buttons .signup {
+            padding: 0.5rem 1.2rem;
+            margin: 0 0.5rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .auth-buttons .login {
+            background: white;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+
+        .auth-buttons .signup {
+            background: #f06277;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1000px;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .footer-links .section h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links .section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links .section img {
+            width: 120px;
+            margin: 0.5rem 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .pin-inputs {
+                gap: 0.3rem;
+                justify-content: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .auth-buttons {
+                flex-direction: column;
+            }
+
+            .auth-buttons .login,
+            .auth-buttons .signup {
+                margin: 0.5rem 0;
+                width: 100px;
+            }
+
+            .footer-links .section {
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <main class="verify-container">
+        <h2>Verification</h2>
+        <p>Enter six digit pin</p>
+
+        <form>
+            <div class="pin-inputs">
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+                <input type="text" maxlength="1" />
+            </div>
+
+            <p class="resend">Didn’t receive a code? <a href="#">Resend</a></p>
+
+            <button type="submit">Submit</button>
+
+            <p class="signup-text">Don't have an account? <a href="#">Signup</a></p>
+        </form>
+    </main>
+
+    <footer id="section-4">
+        <div id="section-4one">
+            <img src="./images/Rectangle 80.png" alt="" width="1207" style="position: absolute;">
+            <img src="./images/Frame 35181.png" alt="">
+        </div>
+        <div id="section-5">
+            <div id="section-5one">
+                <a href="#">library</a>
+                <br>
+                <a href="#">genres</a>
+                <br>
+                <a href="#">languages</a>
+                <br>
+                <a href="#">authors</a>
+            </div>
+            <div id="section-5one">
+                <a href="#">company</a>
+                <br>
+                <a href="#">about us</a>
+                <br>
+                <a href="#">help</a>
+                <br>
+                <a href="#">become a partner</a>
+            </div>
+            <div id="section-5one">
+                <div id="last">
+                    <a href="#">get the app</a>
+                </div>
+                <img src="./images/google-play 1.png" alt="" width="90" style="margin-top: 5px;">
+                <img src="./images/app-store 1.png" alt="" width="90" style="margin-top: 5px;">
+            </div>
+        </div>
+        <hr width="1207" style="color: white;">
+        <div id="section-6">
+            <div id="section-6one">
+                <a href="#">contact us:</a>
+                <img src="./images/logos_facebook.png" alt="" width="15">
+                <img src="./images/Group.png" alt="" width="15">
+                <img src="./images/Group (1).png" alt="" width="15">
+                <img src="./images/Vector.png" alt="" width="15">
+            </div>
+            <div id="section-6one">
+                <a href="#">terms and privacy</a>
+            </div>
+            <div id="section-6one">
+                <a href="#">Delivery & returns</a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

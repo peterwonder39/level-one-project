@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookit Bookstore - Bookiverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #fff;
+            color: #333;
+            padding-bottom: 100px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 400px;
+            padding: 1rem 7rem;
+            position: absolute;
+            top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a,
+        img {
+            margin-right: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem;
+            margin-left: 5rem;
+            margin-top: 8rem;
+        }
+
+        .hero img {
+            width: 300px;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            margin-top: 10rem;
+        }
+
+        .about,.contact,.hours{
+            margin-left: 15rem;
+        }
+               
+        .contact {
+            margin-top: 5rem;
+        }
+
+        .hours {
+            margin-top: 5rem;
+            margin-left: 29rem;
+        }
+
+        .contact p,
+        .hours p,
+        .about p {
+            margin: 0.5rem 0;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 5rem;
+        }
+
+        .box {
+            flex: 1;
+            border: 2px solid #0c0b0b;
+            padding: 1rem;
+
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .review {
+            border: 2px solid #ffb6c1;
+            padding: 1rem;
+            border-radius: 8px;
+            height: 40vh;
+        }
+
+        .reviews {
+            padding: 0rem 7rem;
+        }
+
+        .review-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            /* padding:  0rem 5rem; */
+        }
+
+
+        button {
+            padding: 0.7rem 1.2rem;
+            background: #e75274;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button.outline {
+            background: white;
+            color: #333;
+            border: 2px solid #e75274;
+        }
+
+        .books .book-list {
+            display: flex;
+            justify-content: space-between;
+            padding: 0rem 5rem;
+            
+        }
+        .books{
+            margin-top: 3rem;
+        }
+
+        .book img {
+            width: 130px;
+            height: 200px;
+            object-fit: cover;
+            
+        }
+
+        #section-4 {
+            background-color: black;
+            width: 1207px;
+            height: 70vh;
+            margin-top: 80px;
+
+        }
+
+        #section-4one img:nth-child(2) {
+            width: 160px;
+            position: relative;
+            margin-left: 500px;
+            margin-top: 30px;
+
+        }
+
+        #section-5 {
+            display: flex;
+            /* padding: 20px; */
+            margin-left: 360px;
+        }
+
+        #section-5one {
+            margin-top: 100px;
+            margin-right: 50px;
+
+        }
+
+        #section-5one a {
+            color: white;
+            margin-top: 5em;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #last {
+            margin-top: 55px;
+            margin-left: 50px;
+
+        }
+
+        #section-6 {
+            display: flex;
+            margin-left: 350px;
+            margin-top: 10px;
+
+        }
+
+        #section-6one a {
+            color: white;
+            /* margin-top: 7px; */
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        #section-6one:nth-child(1) {
+            display: flex;
+        }
+
+        #section-6one {
+            margin-right: 100px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-grid {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><img src="./images/Frame 35172.png" alt="" width="100">
+            <a href="#"><i class="fa fa-search" style="color: black;"></i></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/bookdescriptionpage.html">Bookstores</a></li>
+                <li><a href="">Help</a></li>
+                <img src="./images/love-svgrepo-com 1.png" alt="" width="20">
+                <img src="./images/material-symbols_shopping-cart-outline-rounded.png" alt="" width="20">
+                <img src="./images/mdi_account-outline.png" alt="" width="20">
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="./images/unsplash_EDKWnb-kZV4.png" alt="" />
+        <div class="hero-text">
+            <h1>Bookit Bookstore</h1>
+            <p>A Community Hub for Book Lovers</p>
+        </div>
+    </section>
+
+    <section class="about" style="width: 50rem;">
+        <h2 style="margin-left: 15rem;">About Us</h2>
+        <p>Welcome to Bookit. A haven for book lovers with comfy reading nooks and a curated selection of new and used
+            books. Bookit was founded in 2019 and is located in Ogbomosho, Oyo state. They specialize in all genres of
+            books, and sell at reasonable prices throughout Nigeria.</p>
+    </section>
+
+    <section class="contact" style="width: 50rem;">
+        <h2 style="margin-left: 15rem;">Contact Information</h2>
+        <p><strong>Bookstore Address:</strong> 21 Olapade Street, opposite LAUTECH main gate, Ogbomosho, Oyo State</p>
+        <p><strong>Phone No:</strong> 081234567890, 091456789032</p>
+        <p><strong>Email Address:</strong> bookit35@gmail.com</p>
+        <p><strong>Social Media handles:</strong> <img src="./images/logos_facebook.png" alt="" width="20"> <img
+                src="./images/logos_tiktok-icon.png" alt="" width="20"> <img src="./images/logos_whatsapp-icon.png"
+                alt="" width="20"></p>
+    </section>
+
+    <section class="hours">
+        <h2 style="margin-left: 3rem;">Store Hours</h2>
+        <p>Mondays - Saturdays : 7am - 9pm</p>
+    </section>
+
+    <section class="info-grid">
+        <div class="box">
+            <h3>Payment Information</h3>
+            <p>Orders are processed within 1-6 business days.</p>
+            <p>Accepts: Cards, Cash</p>
+        </div>
+        <div class="box">
+            <h3>Delivery Information</h3>
+            <p>Delivery of orders takes 6-12 business days</p>
+            <p>Delivery: Home delivery, Pick Up</p>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2 style="margin-left: 19rem;">Bookit Reviews <a href="#" style="font-size: 15px;">(See all ratings)</a></h2>
+        <div class="review-grid">
+            <div class="review">
+                <p><img src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> April 19th, 2024</p>
+                <p>Shopping with Bookit Bookstore on BookDiverse website has been a great experience so far.</p>
+                <strong>Michael S</strong>
+            </div>
+            <div class="review">
+                <p> <img src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> March 12th, 2024</p>
+                <p>Their staff is knowledgeable and their recommendations are spot on. I’ve discovered new authors and
+                    genres that I love.</p>
+                <strong>Flora A</strong>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="reviews">
+        <div class="review-grid">
+            <div class="review">
+                <p> <img src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> April 19th, 2024</p>
+                <p>Their collection is impressive, and the prices are unbeatable!</p>
+                <strong>Ayo O</strong>
+            </div>
+            <div class="review">
+                <p> <img src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> <img src="./images/Star 1.png" alt=""> <img
+                        src="./images/Star 1.png" alt=""> April 19th, 2024</p>
+                <p>They have a vast selection and their shipping is super fast.</p>
+                <strong>Deborah G</strong>
+            </div>
+        </div>
+        <div class="review-buttons">
+            <button>Rate this vendor</button>
+            <button class="outline">Flag this vendor</button>
+        </div>
+
+    </div>
+    <section class="books">
+        <h2 style="margin-left: 29rem;">Available books <a href="#" style="font-size: 15px;">(View all)</a></h2>
+        <div class="book-list">
+            <div class="book"><img src="./images/Becoming-510x510 1.png" alt="Becoming" />
+                <p>Becoming</p>
+            </div>
+            <div class="book"><img src="./images/Norton 3 1.png" alt="NortonAnthology" />
+                <p>NortonAnthology</p>
+            </div>
+            <div class="book"><img src="./images/effectve studying 1.png" alt="Psychology" />
+                <p>The Psychology Of <br> Effective Studying</p>
+            </div>
+            <div class="book"><img src="./images/kingdom 1.png" alt="Kingdom" />
+                <p>Kingdom Authority</p>
+            </div>
+            <div class="book"><img src="./images/Rebel 1.png" alt="Rebel Girl" />
+                <p>Rebel Girl</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="section-4">
+        <div id="section-4one">
+            <img src="./images/Rectangle 80.png" alt="" width="1207" style="position: absolute;">
+            <img src="./images/Frame 35181.png" alt="">
+        </div>
+        <div id="section-5">
+            <div id="section-5one">
+                <a href="#">library</a>
+                <br>
+                <a href="#">genres</a>
+                <br>
+                <a href="#">languages</a>
+                <br>
+                <a href="#">authors</a>
+            </div>
+            <div id="section-5one">
+                <a href="#">company</a>
+                <br>
+                <a href="#">about us</a>
+                <br>
+                <a href="#">help</a>
+                <br>
+                <a href="#">become a partner</a>
+            </div>
+            <div id="section-5one">
+                <div id="last">
+                    <a href="#">get the app</a>
+                </div>
+                <img src="./images/google-play 1.png" alt="" width="90" style="margin-top: 5px;">
+                <img src="./images/app-store 1.png" alt="" width="90" style="margin-top: 5px;">
+            </div>
+        </div>
+        <hr width="1207" style="color: white;">
+        <div id="section-6">
+            <div id="section-6one">
+                <a href="#">contact us:</a>
+                <img src="./images/logos_facebook.png" alt="" width="15">
+                <img src="./images/Group.png" alt="" width="15">
+                <img src="./images/Group (1).png" alt="" width="15">
+                <img src="./images/Vector.png" alt="" width="15">
+            </div>
+            <div id="section-6one">
+                <a href="#">terms and privacy</a>
+            </div>
+            <div id="section-6one">
+                <a href="#">Delivery & returns</a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

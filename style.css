@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 370px;
+    padding: 1rem 7rem;
+    position: absolute;
+    top: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links a,
+img {
+    margin-right: 30px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    /* gap: 5px; */
+}
+#section1 {
+    display: flex;
+    margin-top: 100px;
+    padding: 20px;
+    margin-left: 90px;
+}
+
+#section1one img {
+    margin-right: 20px;
+}
+
+#section {
+    display: flex;
+    margin-left: 60px;
+    /* justify-content: space-between; */
+    padding: 0px 50px;
+
+}
+
+#section1-box {
+    display: flex;
+    border: 1px solid black;
+    width: 120px;
+    margin-right: 40px;
+    height: 7vh;
+    padding: 8px;
+    border-radius: 10px;
+    /* margin-right: 8px; */
+}
+
+#section1-box:nth-child(3) {
+    padding: 0;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+#section1-box1 {
+    border: 2px solid #F3687F;
+    width: 300px;
+    height: 7vh;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 450px;
+    margin-top: 15px;
+}
+
+#section-3 {
+    display: flex;
+    padding: 0px 57px;
+    justify-content: space-between;
+
+}
+
+#section-4 {
+    background-color: black;
+    width: 1207px;
+    height: 70vh;
+    margin-top: 80px;
+
+}
+
+#section-4one img:nth-child(2) {
+    width: 160px;
+    position: relative;
+    margin-left: 500px;
+    margin-top: 30px;
+
+}
+
+#section-5 {
+    display: flex;
+    /* padding: 20px; */
+    margin-left: 360px;
+}
+
+#section-5one {
+    margin-top: 100px;
+    margin-right: 50px;
+    
+}
+
+#section-5one a {
+    color: white;
+    margin-top: 5em;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+#last {
+    margin-top: 55px;
+    margin-left: 50px;
+
+}
+
+#section-6 {
+    display: flex;
+    margin-left: 350px;
+    margin-top: 10px;
+
+}
+
+#section-6one a {
+    color: white;
+    /* margin-top: 7px; */
+    text-transform: capitalize;
+    text-decoration: none;
+}
+#section-6one:nth-child(1){
+    display: flex;
+}
+#section-6one{
+    margin-right: 100px;
+}

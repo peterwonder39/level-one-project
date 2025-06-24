@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #F3687F;
+            padding: 2rem 1rem;
+            color: white;
+            height: 220vh;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .sidebar ul li {
+            padding: 0.7rem 0;
+            cursor: pointer;
+        }
+
+        .main {
+            flex: 1;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            height: 30vh;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart,
+        .orders,
+        .top-customers,
+        .top-products {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .orders table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders th,
+        .orders td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status {
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .pending {
+            border: 2px solid #E5980C;
+            color:#E5980C;
+            border-radius: 15px;
+        }
+
+        .cancelled {
+            border: 2px solid #FF0404;
+            color: #FF0404;
+            border-radius: 15px;
+        }
+
+        .shipped {
+            border:2px solid #0377FF;
+            color: #0377FF;
+            border-radius: 15px;
+        }
+
+        .delivered {
+            border:2px solid #1FAF38;
+            color: #1FAF38;
+            border-radius: 15px;
+        }
+
+        .top-customers img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .view-btn {
+            background: #f3687f;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                padding: 1rem;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2> Bookit Bookstore</h2>
+        <p>bookitbookstore@gmail.com</p>
+        <ul>
+            <li> Dashboard</li>
+            <li> Add Products</li>
+            <li> Products</li>
+            <li> Messages</li>
+            <li> Customers</li>
+            <li> Setting</li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <h1>Welcome Back Bookit Bookstore.</h1>
+            <input type="date" value="2024-07-24">
+        </div>
+        <p>Here's what is happening in your store</p>
+        <div class="cards">
+            <div class="card" style="background: #FCF0E4;">
+                <h3>Total Sales</h3>
+                <p>₦78,509</p>
+            </div>
+            <div class="card" style="background: #EDF5E8;">
+                <h3>Total Orders</h3>
+                <p>5209</p>
+            </div>
+            <div class="card" style="background: #EAF0FE;">
+                <h3>New Customers</h3>
+                <p>509</p>
+            </div>
+            <div class="card" style="background: #ECF5F4;">
+                <h3>Products</h3>
+                <p>8,509</p>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Sales for the month</h3>
+            <img src="https://via.placeholder.com/600x200?text=Sales+Chart" alt="Sales Chart"
+                style="width: 100%; border-radius: 10px;">
+        </div>
+        <div class="top-products">
+            <h3>Most Selling Products</h3>
+            <ul>
+                <li>Real Americans - 128 Sales</li>
+                <li>Real Americans - 401 Sales</li>
+                <li>Real Americans - 1K Sales</li>
+                <li>Real Americans - 3K Sales</li>
+            </ul>
+        </div>
+        <div class="orders">
+            <h3>Recent Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Customer</th>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Real Americans</td>
+                        <td>John Doe</td>
+                        <td>ID:23189</td>
+                        <td>24th July 2024</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Real Americans</td>
+                        <td>John Doe</td>
+                        <td>ID:23189</td>
+                        <td>24th July 2024</td>
+                        <td><span class="status cancelled">Cancelled</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Real Americans</td>
+                        <td>John Doe</td>
+                        <td>ID:23189</td>
+                        <td>24th July 2024</td>
+                        <td><span class="status shipped">Shipped</span></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Real Americans</td>
+                        <td>John Doe</td>
+                        <td>ID:23189</td>
+                        <td>24th July 2024</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="top-customers">
+            <h3>Weekly Top Customers</h3>
+            <div class="customer">
+                <div class="customer-info">
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <div>John Doe - 7 Orders</div>
+                </div>
+                <button class="view-btn">View</button>
+            </div>
+            <div class="customer">
+                <div class="customer-info">
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <div>Sarah Allen - 7 Orders</div>
+                </div>
+                <button class="view-btn">View</button>
+            </div>
+            <div class="customer">
+                <div class="customer-info">
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <div>Michael King - 5 Orders</div>
+                </div>
+                <button class="view-btn">View</button>
+            </div>
+            <div class="customer">
+                <div class="customer-info">
+                    <img src="https://via.placeholder.com/40" alt="">
+                    <div>Layla Day - 3 Orders</div>
+                </div>
+                <button class="view-btn">View</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

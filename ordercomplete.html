@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Complete - Bookdiverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #222;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 400px;
+            padding: 1rem 5rem;
+            position: absolute;
+            top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            list-style: none;
+        }
+        .nav-links a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a,
+        img {
+            margin-right: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .lf{
+            display: flex;
+        }
+
+
+        .steps {
+            text-align: center;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .steps .muted {
+            color: #ccc;
+        }
+
+        .steps .active {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .complete-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            margin-top: 8rem;
+        }
+
+        .confirmation {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            
+        }
+
+        .left {
+            flex: 1 1 60%;
+        }
+
+        .right {
+            flex: 1 1 35%;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        h2 span {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        .box {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .contact-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .contact-box h4 {
+            margin-top: 0;
+        }
+
+        .continue {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: 2px solid #f06277;
+            background: white;
+            color: #f06277;
+            border-radius: 30px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .order-item {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .order-item img {
+            width: 80px;
+            object-fit: cover;
+        }
+
+        .count {
+            background: #f06277;
+            color: white;
+            border-radius: 50%;
+            padding: 0 0.5rem;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .summary {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .summary p {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+
+        .summary .total {
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-top: 2px solid #ccc;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .confirmation {
+                flex-direction: column;
+            }
+
+            .left,
+            .right {
+                flex: 1 1 100%;
+            }
+
+            .order-item {
+                flex-direction: row;
+            }
+
+            .continue {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><img src="./images/Frame 35172.png" alt="" width="100">
+            <a href="#"><i class="fa fa-search" style="color: black;"></i></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Bookstores</a></li>
+                <li><a href="#">Help</a></li>
+                <img src="./images/love-svgrepo-com 1.png" alt="" width="20">
+                <img src="./images/material-symbols_shopping-cart-outline-rounded.png" alt="" width="20">
+                <img src="./images/mdi_account-outline.png" alt="" width="20">
+            </ul>
+        </nav>
+    </header>
+
+    <main class="complete-container">
+        <div class="steps">
+            <span class="muted">Shopping Cart</span> <span>➤</span>
+            <span class="muted">Checkout Details</span> <span>➤</span>
+            <span class="active">Order Complete</span>
+        </div>
+
+        <div class="confirmation">
+            <div class="left">
+                <div class="lf">
+                    <img src="./images/ic_baseline-check-circle-outline.png" alt="">
+                <h2> Order #326577<br /><span>Thank you Ada!</span></h2>
+                </div>
+
+                <div class="box">
+                    <h3>Order Update</h3>
+                    <p>You will receive Order And Shipping Details Via Email</p>
+                </div>
+
+                <div class="contact-box">
+                    <h4>Contact</h4>
+                    <p><strong>Phone Number:</strong> 0811234567890</p>
+                    <p><strong>Address:</strong> No 7 Briggs street Ogbomosho, Oyo State</p>
+                    <p><strong>Email:</strong> adawilliams7@gmail.com</p>
+                    <p><strong>Payment:</strong> Debit Card</p>
+                </div>
+
+                <button class="continue">Continue Shopping</button>
+            </div>
+
+            <div class="right">
+                <h3> <span><img src="./images/material-symbols_shopping-bag-outline.png" alt=""> </span>Your Order <span class="count">2</span></h3>
+
+                <div class="order-item">
+                    <img src="./images/rachel khong 1.png" alt="Real Americans" />
+                    <div>
+                        <p><strong>Real Americans</strong> (Hardcover)<br />
+                            By Rachel Khong</p>
+                        <p>x1 – NGN10,183</p>
+                    </div>
+                </div>
+
+                <div class="order-item">
+                    <img src="./images/atomic habits 1.png" alt="Atomic Habits" />
+                    <div>
+                        <p><strong>Atomic Habits</strong> (Paperback)<br />
+                            By James Clear</p>
+                        <p>x1 – NGN3,700</p>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <p>Subtotal <span>NGN13,883</span></p>
+                    <p>Delivery Fee <span>NGN8,000</span></p>
+                    <p class="total">Total <span>NGN21,883</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
